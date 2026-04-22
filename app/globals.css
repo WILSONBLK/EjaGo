@@ -1,26 +1,483 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
+/* Tailwind v4 theme tokens (optional but nice to have) */
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
+
+  /* extra tokens you can use in Tailwind classes like text-[color:var(--color-primary)] */
+  --color-primary: var(--g);
+
+  /* map Tailwind font tokens to your Next fonts (set in layout.tsx) */
+  --font-sans: var(--font-montserrat, var(--font-geist-sans));
+  --font-serif: var(--font-playfair);
+  --font-mono: var(--font-geist-mono);
+}@import "tailwindcss";
+
+/* Tailwind v4 theme tokens */
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: var(--g);
+
+  --font-sans: var(--font-montserrat, var(--font-geist-sans));
+  --font-serif: var(--font-playfair);
   --font-mono: var(--font-geist-mono);
 }
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* Your OG site classes belong here */
+@layer components {
+  .nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 200;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 52px;
+    border-bottom: 1px solid transparent;
+    transition: background 0.3s, border-color 0.3s;
   }
+
+  .nav.stuck {
+    background: rgba(12, 12, 12, 0.96);
+    backdrop-filter: blur(20px);
+    border-color: var(--line);
+  }
+
+  .nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+  }
+
+  .nav-logo img {
+    height: 36px !important;
+    width: auto !important;
+  }
+
+  /* ...paste the rest of your OG CSS here... */
+
+  @media (max-width: 900px) {
+    .nav { padding: 14px 18px; }
+    .nav-link { display: none; }
+    /* ... */
+  }
+} /* ✅ closes @layer components */
+
+/* Base/reset + site-wide styling */
+@layer base {
+  :root {
+  --g: #0b5d3b;
+  --g2: #0d7045;
+  --gdim: rgba(11, 93, 59, 0.12);
+  --ink: #0c0c0c;
+  --ink2: #111111;
+  --ink3: #161616;
+  --off: #f2f1ed;
+  --muted: #666;
+  --line: rgba(255, 255, 255, 0.07);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--ink);
+  color: var(--off);
+  font-family: var(--font-sans);
+  overflow-x: hidden;
 }
+
+/* GRAIN */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 999;
+  opacity: 0.35;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='.035'/%3E%3C/svg%3E");
+}
+
+/* NAV */
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 200;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 52px;
+  border-bottom: 1px solid transparent;
+  transition: background 0.3s, border-color 0.3s;
+}
+.nav.stuck {
+  background: rgba(12, 12, 12, 0.96);
+  backdrop-filter: blur(20px);
+  border-color: var(--line);
+}
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+}
+/* Helps both <img> and next/image output */
+.nav-logo img {
+  height: 36px !important;
+  width: auto !important;
+}
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.nav-link {
+  font-size: 0.58rem;
+  font-weight: 600;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--muted);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.nav-link:hover {
+  color: var(--off);
+}
+.nav-wa {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.58rem;
+  font-weight: 700;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: #fff;
+  background: var(--g);
+  padding: 10px 18px;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+.nav-wa:hover {
+  background: var(--g2);
+}
+.nav-wa svg {
+  width: 13px;
+  height: 13px;
+  fill: currentColor;
+  flex-shrink: 0;
+}
+
+/* HERO */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 0 52px 88px;
+  position: relative;
+  overflow: hidden;
+}
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+.ring {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid rgba(11, 93, 59, 0.13);
+}
+.ring:nth-child(1) {
+  width: 600px;
+  height: 600px;
+  top: 50%;
+  right: -120px;
+  transform: translateY(-50%);
+  animation: pr 6s ease-in-out infinite;
+}
+.ring:nth-child(2) {
+  width: 820px;
+  height: 820px;
+  top: 50%;
+  right: -230px;
+  transform: translateY(-50%);
+  animation: pr 6s ease-in-out 1.8s infinite;
+  border-color: rgba(11, 93, 59, 0.07);
+}
+.ring:nth-child(3) {
+  width: 1040px;
+  height: 1040px;
+  top: 50%;
+  right: -340px;
+  transform: translateY(-50%);
+  animation: pr 6s ease-in-out 3.6s infinite;
+  border-color: rgba(11, 93, 59, 0.04);
+}
+.glow {
+  position: absolute;
+  width: 700px;
+  height: 700px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(11, 93, 59, 0.2) 0%, transparent 65%);
+  top: 50%;
+  right: -80px;
+  transform: translateY(-50%);
+}
+@keyframes pr {
+  0%,
+  100% {
+    transform: translateY(-50%) scale(1);
+  }
+  50% {
+    transform: translateY(-50%) scale(1.04);
+  }
+}
+.a1 {
+  opacity: 0;
+  animation: up 0.8s ease 0.1s forwards;
+}
+.a2 {
+  opacity: 0;
+  animation: up 0.8s ease 0.25s forwards;
+}
+.a3 {
+  opacity: 0;
+  animation: up 0.8s ease 0.42s forwards;
+}
+.a4 {
+  opacity: 0;
+  animation: up 0.8s ease 0.58s forwards;
+}
+.a5 {
+  opacity: 0;
+  animation: up 0.8s ease 0.74s forwards;
+}
+@keyframes up {
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.hero-label {
+  font-size: 0.56rem;
+  font-weight: 700;
+  letter-spacing: 0.55em;
+  color: var(--g);
+  text-transform: uppercase;
+  margin-bottom: 24px;
+}
+.hero-h1 {
+  font-family: var(--font-serif);
+  font-size: clamp(3.2rem, 7.5vw, 7rem);
+  font-weight: 700;
+  line-height: 0.91;
+  letter-spacing: -0.025em;
+  max-width: 860px;
+}
+.hero-h1 em {
+  font-style: italic;
+  color: var(--g);
+}
+.hero-body {
+  margin-top: 28px;
+  font-size: 0.8rem;
+  font-weight: 300;
+  color: var(--muted);
+  letter-spacing: 0.05em;
+  line-height: 2;
+  max-width: 460px;
+}
+.hero-body strong {
+  color: var(--off);
+  font-weight: 600;
+}
+.hero-btns {
+  margin-top: 40px;
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.btn {
+  font-family: var(--font-sans);
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  padding: 16px 34px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-decoration: none;
+  display: inline-block;
+}
+.solid {
+  background: var(--g);
+  color: #fff;
+}
+.solid:hover {
+  background: var(--g2);
+  transform: translateY(-2px);
+}
+.outline {
+  background: transparent;
+  color: var(--muted);
+  border: 1px solid #252525;
+}
+.outline:hover {
+  border-color: #555;
+  color: var(--off);
+}
+.scroll-hint {
+  margin-top: 52px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.scroll-line {
+  width: 40px;
+  height: 1px;
+  background: var(--g);
+}
+.scroll-text {
+  font-size: 0.52rem;
+  font-weight: 600;
+  letter-spacing: 0.4em;
+  color: var(--muted);
+  text-transform: uppercase;
+}
+
+/* SHARED SECTION STYLES */
+hr.rule {
+  border: none;
+  border-top: 1px solid var(--line);
+  margin: 0 52px;
+}
+.section {
+  padding: 110px 52px;
+  max-width: 1160px;
+  margin: 0 auto;
+}
+.section-dark {
+  padding: 110px 52px;
+  background: #090909;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+.section-dark-inner {
+  max-width: 1160px;
+  margin: 0 auto;
+}
+.sec-label {
+  font-size: 0.56rem;
+  font-weight: 700;
+  letter-spacing: 0.55em;
+  color: var(--g);
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+.sec-h {
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 4.5vw, 3.6rem);
+  font-weight: 700;
+  line-height: 1.02;
+  margin-bottom: 14px;
+}
+.sec-h em {
+  font-style: italic;
+  color: var(--g);
+}
+.sec-sub {
+  font-size: 0.74rem;
+  font-weight: 300;
+  color: var(--muted);
+  letter-spacing: 0.05em;
+  line-height: 2;
+  max-width: 500px;
+  margin-bottom: 52px;
+}
+
+/* ...continue pasting the rest of your OG CSS exactly as-is... */
+/* (WHY, BIKES, STEPS, DELIVERY, BIZ, REGISTER, FOOTER, MOBILE MQ) */
+
+@media (max-width: 900px) {
+  .nav {
+    padding: 14px 18px;
+  }
+  .nav-link {
+    display: none;
+  }
+  .hero {
+    padding: 110px 18px 64px;
+  }
+  .section,
+  .delivery-section,
+  .biz-wrap,
+  .reg-section {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+  .section-dark {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+  hr.rule {
+    margin: 0 18px;
+  }
+  .why-grid,
+  .bikes-grid,
+  .delivery-grid {
+    grid-template-columns: 1fr;
+  }
+  .steps {
+    grid-template-columns: 1fr 1fr;
+  }
+  .step {
+    border-bottom: 1px solid var(--line);
+  }
+  .step:nth-child(even) {
+    border-right: none;
+  }
+  .biz-inner,
+  .reg-grid {
+    grid-template-columns: 1fr;
+  }
+  .biz-left {
+    border-right: none;
+    border-bottom: 1px solid var(--line);
+  }
+  .reg-aside {
+    position: static;
+  }
+  .frow {
+    grid-template-columns: 1fr;
+  }
+  footer {
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+  }
+  .f-right {
+    text-align: center;
+  }
+  
+}}
