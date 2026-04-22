@@ -470,12 +470,12 @@ export default function Home() {
           Freedom on the Go. Earn as You Go.
           <br />
           <a
-            href="https://wa.me/2349037260335"
+            href="https://wa.me/+2347055946707"
             target="_blank"
             rel="noreferrer"
             className="inline-flex items-center gap-[6px] text-[0.57rem] font-bold uppercase tracking-[0.18em] text-[color:var(--g)] hover:opacity-75"
           >
-            💬 +234 903 726 0335
+            💬 +234 705 594 6707
           </a>
           <br />
           <span>ejago.ng &nbsp;·&nbsp; © 2025 EjaGo. All rights reserved.</span>
