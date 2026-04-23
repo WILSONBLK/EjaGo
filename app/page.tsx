@@ -462,7 +462,7 @@ export default function Home() {
       {/* FOOTER */}
       <footer className="flex items-center justify-between border-t border-[color:var(--line)] px-[52px] py-12 max-md:flex-col max-md:gap-5 max-md:text-center max-md:px-[18px]">
         <img
-          src="/logo-wordmark.pg"
+          src="/logo.png"
           alt="EjaGo"
           className="h-8 w-auto"
         />

@@ -20,9 +20,7 @@ const playfair = Playfair_Display({
 export const metadata: Metadata = {
   title: "EjaGo — Freedom on the Go",
   description: "Premium bikes built for your freedom. Own your ride. Move without limits.",
-  icons: {
-    icon: "/icon.png", // put icon.png in /public (or remove this and use app/icon.png)
-  },
+  // Removed the icons object from here
 };
 
 export default function RootLayout({
@@ -30,6 +28,9 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
+      <head>
+        <link rel="icon" href="/logo.png" type="image/png" />
+      </head>
       <body className={`${montserrat.variable} ${playfair.variable}`}>
         {children}
       </body>

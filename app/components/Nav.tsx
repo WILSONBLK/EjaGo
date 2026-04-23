@@ -17,7 +17,7 @@ export default function Nav() {
   return (
     <nav className={`nav ${stuck ? "stuck" : ""}`} id="nav">
       <Link href="#" className="nav-logo">
-        <Image src="/logo-wordmark.png" alt="EjaGo" width={160} height={36} priority />
+        <Image src="/logo.png" alt="EjaGo" width={160} height={36} priority />
       </Link>
 
       <div className="nav-right">
