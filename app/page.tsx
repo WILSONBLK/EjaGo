@@ -443,7 +443,7 @@ export default function Home() {
             ))}
 
             <a
-              href="https://wa.me/2349037260335?text=Hi%20EjaGo%2C%20I%27m%20interested%20in%20a%20batch%20order."
+              href="https://wa.me/+2347055946707?text=Hi%20EjaGo%2C%20I%27m%20interested%20in%20a%20batch%20order."
               target="_blank"
               rel="noreferrer"
               className="mt-2 block bg-[color:var(--g)] px-[34px] py-4 text-center text-[0.6rem] font-bold uppercase tracking-[0.35em] text-white transition-all hover:-translate-y-[2px] hover:bg-[color:var(--g2)]"

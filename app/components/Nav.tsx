@@ -32,7 +32,7 @@ export default function Nav() {
         </a>
 
         <a
-          href="https://wa.me/2349037260335"
+          href="https://wa.me/+2347055946707"
           target="_blank"
           rel="noreferrer"
           className="nav-wa"

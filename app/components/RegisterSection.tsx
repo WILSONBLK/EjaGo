@@ -18,7 +18,7 @@ export default function RegisterSection() {
 
   const waLink = useMemo(() => {
     const msg = `Hi EjaGo! My name is ${name}. I am interested in: ${INTEREST_LABELS[interest]}. My WhatsApp: ${phone}`;
-    return `https://wa.me/2349037260335?text=${encodeURIComponent(msg)}`;
+    return `https://wa.me/+2347055946707?text=${encodeURIComponent(msg)}`;
   }, [interest, name, phone]);
 
   function onSubmit(e: React.FormEvent<HTMLFormElement>) {
@@ -59,7 +59,7 @@ export default function RegisterSection() {
               <div className="text-[1.4rem]">💬</div>
               <div>
                 <a
-                  href="https://wa.me/2349037260335"
+                  href="https://wa.me/+2347055946707"
                   target="_blank"
                   rel="noreferrer"
                   className="block text-[0.62rem] font-bold tracking-[0.18em] uppercase text-[color:var(--g)]"
