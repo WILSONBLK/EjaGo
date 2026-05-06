@@ -67,7 +67,7 @@ export default function RegisterSection() {
                   Chat us directly on WhatsApp
                 </a>
                 <span className="mt-[2px] block text-[0.54rem] font-light tracking-[0.1em] uppercase text-[color:var(--muted)]">
-                  +234 903 726 0335 · We reply fast
+                  +234 705 594 6707 · We reply fast
                 </span>
               </div>
             </div>
