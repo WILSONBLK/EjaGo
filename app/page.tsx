@@ -12,17 +12,17 @@ export default function Home() {
       <section className="relative flex min-h-screen flex-col justify-end overflow-hidden px-[52px] pb-[88px] max-md:px-[18px] max-md:pt-[110px]">
         {/* Background rings + glow */}
         <div className="pointer-events-none absolute inset-0">
-          <div className="absolute right-[-120px] top-1/2 h-[600px] w-[600px] -translate-y-1/2 rounded-full border border-[rgba(11,93,59,0.13)] animate-[pr_6s_ease-in-out_infinite]" />
-          <div className="absolute right-[-230px] top-1/2 h-[820px] w-[820px] -translate-y-1/2 rounded-full border border-[rgba(11,93,59,0.07)] animate-[pr_6s_ease-in-out_1.8s_infinite]" />
-          <div className="absolute right-[-340px] top-1/2 h-[1040px] w-[1040px] -translate-y-1/2 rounded-full border border-[rgba(11,93,59,0.04)] animate-[pr_6s_ease-in-out_3.6s_infinite]" />
-          <div className="absolute right-[-80px] top-1/2 h-[700px] w-[700px] -translate-y-1/2 rounded-full bg-[radial-gradient(circle,rgba(11,93,59,0.2)_0%,transparent_65%)]" />
+          <div className="hero-ring absolute right-[-120px] top-1/2 h-[600px] w-[600px] -translate-y-1/2 animate-[pr_6s_ease-in-out_infinite]" />
+          <div className="hero-ring absolute right-[-230px] top-1/2 h-[820px] w-[820px] -translate-y-1/2 animate-[pr_6s_ease-in-out_1.8s_infinite]" />
+          <div className="hero-ring absolute right-[-340px] top-1/2 h-[1040px] w-[1040px] -translate-y-1/2 animate-[pr_6s_ease-in-out_3.6s_infinite]" />
+          <div className="hero-glow absolute right-[-80px] top-1/2 h-[700px] w-[700px] -translate-y-1/2" />
         </div>
 
         <div className="a1 mb-6 text-[0.56rem] font-bold uppercase tracking-[0.55em] text-[color:var(--g)]">
           Premium Mobility — Nigeria
         </div>
 
-        <h1 className="a2 max-w-[860px] font-serif text-[clamp(3.2rem,7.5vw,7rem)] font-bold leading-[0.91] tracking-[-0.025em]">
+        <h1 className="a2 max-w-[860px] font-sans text-[clamp(3.2rem,7.5vw,6.2rem)] font-bold leading-[0.96] tracking-[-0.035em]">
           Freedom
           <br />
           <em className="italic text-[color:var(--g)]">on the Go.</em>
@@ -52,7 +52,7 @@ export default function Home() {
           </button>
 
           <button
-            className="btn outline border border-[#252525] bg-transparent px-[34px] py-4 text-[0.6rem] font-bold uppercase tracking-[0.35em] text-[color:var(--muted)] transition-colors hover:border-[#555555] hover:text-[color:var(--off)]"
+            className="btn outline border border-[color:var(--border)] bg-transparent px-[34px] py-4 text-[0.6rem] font-bold uppercase tracking-[0.35em] text-[color:var(--muted)] transition-colors hover:border-[color:var(--g)] hover:text-[color:var(--text)]"
             onClick={() =>
               document
                 .getElementById("bikes")
@@ -82,7 +82,7 @@ export default function Home() {
           Why EjaGo
         </div>
 
-        <h2 className="sec-h mb-[14px] font-serif text-[clamp(2rem,4.5vw,3.6rem)] font-bold leading-[1.02]">
+        <h2 className="sec-h mb-[14px] font-sans text-[clamp(2rem,4.5vw,3.6rem)] font-bold leading-[1.02]">
           Not just a bike.
           <br />
           <em className="italic text-[color:var(--g)]">A better life.</em>
@@ -117,7 +117,7 @@ export default function Home() {
               className="relative overflow-hidden bg-[color:var(--ink2)] px-8 py-10 transition-colors hover:bg-[color:var(--ink3)]"
             >
               <div className="pointer-events-none absolute inset-x-0 bottom-0 h-[3px] origin-left scale-x-0 bg-[color:var(--g)] transition-transform duration-300 hover:scale-x-100" />
-              <div className="mb-6 font-serif text-[3.5rem] font-bold leading-none text-[#1a1a1a]">
+              <div className="mb-6 font-sans text-[3.5rem] font-bold leading-none text-[color:var(--text)]">
                 {item.num}
               </div>
               <div className="mb-3 text-[0.72rem] font-bold uppercase tracking-[0.18em] text-[color:var(--off)]">
@@ -136,14 +136,14 @@ export default function Home() {
       {/* BIKES */}
       <section
         id="bikes"
-        className="border-y border-[color:var(--line)] bg-[#090909] px-[52px] py-[110px] max-md:px-[18px]"
+        className="border-y border-[color:var(--line)] bg-[color:var(--surface)] px-[52px] py-[110px] max-md:px-[18px]"
       >
         <div className="mx-auto max-w-[1160px]">
           <div className="mb-4 text-[0.56rem] font-bold uppercase tracking-[0.55em] text-[color:var(--g)]">
             The Lineup
           </div>
 
-          <h2 className="sec-h mb-[14px] font-serif text-[clamp(2rem,4.5vw,3.6rem)] font-bold leading-[1.02]">
+          <h2 className="sec-h mb-[14px] font-sans text-[clamp(2rem,4.5vw,3.6rem)] font-bold leading-[1.02]">
             Built to <em className="italic text-[color:var(--g)]">move.</em>
           </h2>
 
@@ -260,7 +260,7 @@ export default function Home() {
         <div className="mb-4 text-[0.56rem] font-bold uppercase tracking-[0.55em] text-[color:var(--g)]">
           How It Works
         </div>
-        <h2 className="sec-h mb-[14px] font-serif text-[clamp(2rem,4.5vw,3.6rem)] font-bold leading-[1.02]">
+        <h2 className="sec-h mb-[14px] font-sans text-[clamp(2rem,4.5vw,3.6rem)] font-bold leading-[1.02]">
           Simple from
           <br />
           <em className="italic text-[color:var(--g)]">day one.</em>
@@ -304,7 +304,7 @@ export default function Home() {
                 .filter(Boolean)
                 .join(" ")}
             >
-              <div className="mb-5 font-serif text-[3rem] font-bold leading-none text-[#1c1c1c]">
+              <div className="mb-5 font-sans text-[3rem] font-bold leading-none text-[color:var(--text)]">
                 {s.n}
               </div>
               <div className="mb-[10px] text-[0.62rem] font-bold uppercase tracking-[0.2em] text-[color:var(--off)]">
@@ -325,7 +325,7 @@ export default function Home() {
         <div className="mb-4 text-[0.56rem] font-bold uppercase tracking-[0.55em] text-[color:var(--g)]">
           Delivery & Earning
         </div>
-        <h2 className="sec-h mb-[14px] font-serif text-[clamp(2rem,4.5vw,3.6rem)] font-bold leading-[1.02]">
+        <h2 className="sec-h mb-[14px] font-sans text-[clamp(2rem,4.5vw,3.6rem)] font-bold leading-[1.02]">
           Your bike.
           <br />
           <em className="italic text-[color:var(--g)]">Your income.</em>
@@ -391,7 +391,7 @@ export default function Home() {
             <div className="mb-4 text-[0.56rem] font-bold uppercase tracking-[0.5em] text-[color:var(--g)]">
               For Teams & Businesses
             </div>
-            <h3 className="mb-4 font-serif text-[clamp(1.6rem,3vw,2.6rem)] font-bold leading-[1.05]">
+            <h3 className="mb-4 font-sans text-[clamp(1.6rem,3vw,2.6rem)] font-bold leading-[1.05]">
               Need more
               <br />
               than one?
@@ -466,7 +466,7 @@ export default function Home() {
           alt="EjaGo"
           className="h-8 w-auto"
         />
-        <div className="text-right text-[0.57rem] font-light leading-[2.2] tracking-[0.17em] text-[#2a2a2a] max-md:text-center">
+        <div className="text-right text-[0.57rem] font-light leading-[2.2] tracking-[0.17em] text-[color:var(--muted)] max-md:text-center">
           Freedom on the Go. Earn as You Go.
           <br />
           <a

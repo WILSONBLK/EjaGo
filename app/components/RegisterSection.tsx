@@ -34,7 +34,7 @@ export default function RegisterSection() {
   return (
     <section
       id="register"
-      className="border-t border-[color:var(--line)] bg-[#090909] px-[52px] py-[110px] max-md:px-[18px]"
+      className="border-t border-[color:var(--line)] bg-[color:var(--surface)] px-[52px] py-[110px] max-md:px-[18px]"
     >
       <div className="mx-auto max-w-[1160px]">
         <div className="grid grid-cols-[1fr_1fr] gap-[80px] items-start max-md:grid-cols-1">
@@ -125,7 +125,7 @@ export default function RegisterSection() {
                         onChange={(e) => setName(e.target.value)}
                         placeholder="Your name"
                         required
-                        className="w-full bg-[#111111] border border-[#1e1e1e] px-[14px] py-[13px] text-[0.8rem] font-light text-[color:var(--off)] outline-none transition-colors focus:border-[color:var(--g)] placeholder:text-[#2a2a2a]"
+                        className="w-full bg-[color:var(--surface)] border border-[color:var(--border)] px-[14px] py-[13px] text-[0.8rem] font-light text-[color:var(--text)] outline-none transition-colors focus:border-[color:var(--g)] placeholder:text-[color:var(--muted)]"
                       />
                     </div>
 
@@ -143,12 +143,12 @@ export default function RegisterSection() {
                         onChange={(e) => setPhone(e.target.value)}
                         placeholder="+234 800 000 0000"
                         required
-                        className="w-full bg-[#111111] border border-[#1e1e1e] px-[14px] py-[13px] text-[0.8rem] font-light text-[color:var(--off)] outline-none transition-colors focus:border-[color:var(--g)] placeholder:text-[#2a2a2a]"
+                        className="w-full bg-[color:var(--surface)] border border-[color:var(--border)] px-[14px] py-[13px] text-[0.8rem] font-light text-[color:var(--text)] outline-none transition-colors focus:border-[color:var(--g)] placeholder:text-[color:var(--muted)]"
                       />
                     </div>
                   </div>
 
-                  <p className="border-l-2 border-[color:var(--g)] pl-3 text-[0.6rem] font-light leading-[1.8] tracking-[0.05em] text-[#333333]">
+                  <p className="border-l-2 border-[color:var(--g)] pl-3 text-[0.6rem] font-light leading-[1.8] tracking-[0.05em] text-[color:var(--muted)]">
                     No payment required. EjaGo will reach you on WhatsApp within
                     24 hours to personally discuss your interest and next steps.
                   </p>
@@ -222,7 +222,7 @@ function InterestButton({ active, icon, title, desc, onClick }: InterestButtonPr
       className={[
         "flex w-full items-center justify-between bg-[color:var(--ink2)] border border-transparent",
         "px-[18px] py-4 text-left transition-colors",
-        "hover:bg-[color:var(--ink3)] hover:border-[#1e1e1e]",
+        "hover:bg-[color:var(--ink3)] hover:border-[color:var(--border)]",
         active && "bg-[color:var(--gdim)] border-[color:var(--g)]",
       ]
         .filter(Boolean)
@@ -242,7 +242,7 @@ function InterestButton({ active, icon, title, desc, onClick }: InterestButtonPr
       <div
         className={[
           "text-[0.9rem] transition-colors",
-          active ? "text-[color:var(--g)]" : "text-[#222222]",
+          active ? "text-[color:var(--g)]" : "text-[color:var(--muted)]",
         ].join(" ")}
       >
         →

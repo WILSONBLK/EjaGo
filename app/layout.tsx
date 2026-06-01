@@ -1,19 +1,19 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { Montserrat, Playfair_Display } from "next/font/google";
+import { Inter, Lora } from "next/font/google";
 
-const montserrat = Montserrat({
+const inter = Inter({
   subsets: ["latin"],
-  weight: ["300", "400", "600", "700", "900"],
-  variable: "--font-montserrat",
+  weight: ["300", "400", "500", "600", "700", "800", "900"],
+  variable: "--font-inter",
   display: "swap",
 });
 
-const playfair = Playfair_Display({
+const lora = Lora({
   subsets: ["latin"],
-  weight: ["400", "700"],
+  weight: ["400", "500", "600", "700"],
   style: ["normal", "italic"],
-  variable: "--font-playfair",
+  variable: "--font-lora",
   display: "swap",
 });
 
@@ -31,7 +31,7 @@ export default function RootLayout({
       <head>
         <link rel="icon" href="/logo.png" type="image/png" />
       </head>
-      <body className={`${montserrat.variable} ${playfair.variable}`}>
+      <body className={`${inter.variable} ${lora.variable}`}>
         {children}
       </body>
     </html>
