@@ -9,7 +9,7 @@ export default function Home() {
       <Nav />
 
       {/* HERO */}
-      <section className="relative flex min-h-screen flex-col justify-end overflow-hidden px-[52px] pb-[88px] max-md:px-[18px] max-md:pt-[110px]">
+      <section className="hero relative flex min-h-screen flex-col justify-end overflow-hidden px-[52px] pb-[88px] max-md:px-[18px] max-md:pt-[110px]">
         {/* Background rings + glow */}
         <div className="pointer-events-none absolute inset-0">
           <div className="hero-ring absolute right-[-120px] top-1/2 h-[600px] w-[600px] -translate-y-1/2 animate-[pr_6s_ease-in-out_infinite]" />
@@ -19,27 +19,25 @@ export default function Home() {
         </div>
 
         <div className="a1 mb-6 text-[0.56rem] font-bold uppercase tracking-[0.55em] text-[color:var(--g)]">
-          Premium Mobility — Nigeria
+          Premium mobility for modern living
         </div>
 
-        <h1 className="a2 max-w-[860px] font-sans text-[clamp(3.2rem,7.5vw,6.2rem)] font-bold leading-[0.96] tracking-[-0.035em]">
-          Freedom
+        <h1 className="a2 hero-h1 max-w-[860px] font-sans text-[clamp(3.2rem,7.5vw,6.2rem)] font-bold leading-[0.96] tracking-[-0.035em]">
+          <span className="anim-reveal delay-100" style={{display: 'inline-block'}}>Freedom</span>
           <br />
-          <em className="italic text-[color:var(--g)]">on the Go.</em>
+          <em className="hero-em anim-swipe-right delay-300">on the go</em>
         </h1>
 
-        <p className="a3 mt-7 max-w-[460px] text-[0.8rem] font-light leading-[2] tracking-[0.05em] text-[color:var(--muted)]">
-          Stop wasting money on transport.
+        <p className="a3 hero-body mt-7 max-w-[520px] text-[0.9rem] font-light leading-[2] tracking-[0.05em] text-[color:var(--muted)]">
+          Premium bicycles, e-bikes, and smart mobility solutions designed for
+          campuses, dense communities, and modern delivery ecosystems.
           <br />
           <strong className="font-semibold text-[color:var(--off)]">
-            Own a premium bike
-          </strong>{" "}
-          — move freely, move smart,
-          <br />
-          move on your own terms.
+            Move easier. Save money. Earn as you ride.
+          </strong>
         </p>
 
-        <div className="a4 mt-10 flex flex-wrap items-center gap-[14px]">
+        <div className="a4 hero-btns mt-10 flex flex-wrap items-center gap-[14px]">
           <button
             className="btn solid bg-[color:var(--g)] px-[34px] py-4 text-[0.6rem] font-bold uppercase tracking-[0.35em] text-white transition-all hover:-translate-y-[2px] hover:bg-[color:var(--g2)]"
             onClick={() =>
@@ -59,15 +57,57 @@ export default function Home() {
                 ?.scrollIntoView({ behavior: "smooth" })
             }
           >
-            See the Bikes ↓
+            Explore the Lineup ↓
           </button>
         </div>
 
-        <div className="a5 mt-[52px] flex items-center gap-[14px]">
+        <div className="a5 mt-[52px] flex flex-wrap items-center gap-[12px]">
           <div className="h-px w-10 bg-[color:var(--g)]" />
           <div className="text-[0.52rem] font-semibold uppercase tracking-[0.4em] text-[color:var(--muted)]">
-            Scroll to explore
+            For riders, businesses, and modern urban life
           </div>
+        </div>
+      </section>
+
+      <hr className="border-0 border-t border-[color:var(--line)] mx-[52px] max-md:mx-[18px]" />
+
+      <section className="mx-auto max-w-[1160px] px-[52px] py-[72px] max-md:px-[18px]">
+        <div className="mb-6 text-[0.56rem] font-bold uppercase tracking-[0.55em] text-[color:var(--g)]">
+          Built for your world
+        </div>
+        <div className="grid grid-cols-3 gap-[18px] max-md:grid-cols-1">
+          {[
+            {
+              title: "Customers",
+              description:
+                "Premium cycling and e-bike ownership for commuting, fitness, and low-cost local travel.",
+            },
+            {
+              title: "Vendors",
+              description:
+                "Reliable last-mile delivery solutions with premium fleet support and flexible deployment.",
+            },
+            {
+              title: "Riders",
+              description:
+                "Income-ready rides for delivery partners with easy onboarding and smart mobility tools.",
+            },
+          ].map((item) => (
+            <div
+              key={item.title}
+              className="rounded-[22px] border border-[color:var(--line)] bg-[color:var(--surface)] p-8 shadow-[0_30px_60px_var(--shadow)]"
+            >
+              <div className="mb-3 text-[0.7rem] font-semibold uppercase tracking-[0.2em] text-[color:var(--g)]">
+                {item.title}
+              </div>
+              <div className="text-[1.1rem] font-bold leading-[1.25] text-[color:var(--text)] mb-4">
+                {item.title} made effortless.
+              </div>
+              <p className="text-[0.85rem] leading-[1.9] tracking-[0.04em] text-[color:var(--muted)]">
+                {item.description}
+              </p>
+            </div>
+          ))}
         </div>
       </section>
 
@@ -114,7 +154,7 @@ export default function Home() {
           ].map((item) => (
             <div
               key={item.num}
-              className="relative overflow-hidden bg-[color:var(--ink2)] px-8 py-10 transition-colors hover:bg-[color:var(--ink3)]"
+              className="relative overflow-hidden bg-[color:var(--surface)] px-8 py-10 transition-colors hover:bg-[color:var(--surface-soft)]"
             >
               <div className="pointer-events-none absolute inset-x-0 bottom-0 h-[3px] origin-left scale-x-0 bg-[color:var(--g)] transition-transform duration-300 hover:scale-x-100" />
               <div className="mb-6 font-sans text-[3.5rem] font-bold leading-none text-[color:var(--text)]">
@@ -154,14 +194,14 @@ export default function Home() {
 
           <div className="grid grid-cols-3 gap-[2px] max-md:grid-cols-1">
             {/* Classic */}
-            <div className="overflow-hidden bg-[color:var(--ink2)]">
-              <div className="bike-visual flex h-[260px] items-center justify-center bg-[color:var(--ink3)]">
+            <div className="overflow-hidden bg-[color:var(--surface)]">
+              <div className="bike-visual flex h-[260px] items-center justify-center bg-[color:var(--surface-soft)]">
                 <div className="relative h-[110px] w-[110px] animate-[spin_8s_linear_infinite] rounded-full border-[3px] border-[color:var(--g)]">
                   <div className="absolute left-1/2 top-1/2 h-[10px] w-[10px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[color:var(--g)]" />
                   {[0, 45, 90, 135].map((deg) => (
                     <div
                       key={deg}
-                      className="absolute left-1/2 top-1/2 h-px w-1/2 origin-left bg-[rgba(11,93,59,0.4)]"
+                      className="absolute left-1/2 top-1/2 h-px w-1/2 origin-left bg-[color:var(--g)]/40"
                       style={{ transform: `rotate(${deg}deg)` }}
                     />
                   ))}
@@ -177,7 +217,7 @@ export default function Home() {
                   daily campus and city movement. Available in Forest Green and
                   Matte Black.
                 </div>
-                <div className="inline-flex items-center gap-[7px] border border-[rgba(11,93,59,0.35)] px-3 py-[6px] text-[0.52rem] font-bold uppercase tracking-[0.28em] text-[color:var(--g)]">
+                <div className="inline-flex items-center gap-[7px] border border-[color:var(--line-soft)] px-3 py-[6px] text-[0.52rem] font-bold uppercase tracking-[0.28em] text-[color:var(--g)]">
                   <div className="h-[5px] w-[5px] rounded-full bg-[color:var(--g)]" />
                   Available Now
                 </div>
@@ -185,9 +225,9 @@ export default function Home() {
             </div>
 
             {/* Electric */}
-            <div className="coming overflow-hidden bg-[color:var(--ink2)] opacity-65">
-              <div className="relative flex h-[260px] items-center justify-center bg-[color:var(--ink3)]">
-                <div className="absolute right-4 top-4 bg-[rgba(11,93,59,0.9)] px-3 py-[5px] text-[0.48rem] font-bold uppercase tracking-[0.3em] text-white">
+            <div className="coming overflow-hidden bg-[color:var(--surface)] opacity-85">
+              <div className="relative flex h-[260px] items-center justify-center bg-[color:var(--surface-soft)]">
+                <div className="absolute right-4 top-4 bg-[color:var(--g)]/95 px-3 py-[5px] text-[0.48rem] font-bold uppercase tracking-[0.3em] text-white">
                   Coming Soon
                 </div>
                 <div className="relative h-[110px] w-[110px] animate-[spin_4s_linear_infinite] rounded-full border-[3px] border-[color:var(--g)]">
@@ -195,7 +235,7 @@ export default function Home() {
                   {[0, 45, 90, 135].map((deg) => (
                     <div
                       key={deg}
-                      className="absolute left-1/2 top-1/2 h-px w-1/2 origin-left bg-[rgba(11,93,59,0.4)]"
+                      className="absolute left-1/2 top-1/2 h-px w-1/2 origin-left bg-[color:var(--g)]/40"
                       style={{ transform: `rotate(${deg}deg)` }}
                     />
                   ))}
@@ -210,7 +250,7 @@ export default function Home() {
                   Zero effort. Full freedom. The EjaGo E-Bike brings electric
                   assist to your daily movement — further, faster, effortlessly.
                 </div>
-                <div className="inline-flex items-center gap-[7px] border border-[rgba(11,93,59,0.35)] px-3 py-[6px] text-[0.52rem] font-bold uppercase tracking-[0.28em] text-[color:var(--g)]">
+                <div className="inline-flex items-center gap-[7px] border border-[color:var(--line-soft)] px-3 py-[6px] text-[0.52rem] font-bold uppercase tracking-[0.28em] text-[color:var(--g)]">
                   <div className="h-[5px] w-[5px] rounded-full bg-[color:var(--g)]" />
                   Coming Soon
                 </div>
@@ -218,9 +258,9 @@ export default function Home() {
             </div>
 
             {/* Rentals */}
-            <div className="coming overflow-hidden bg-[color:var(--ink2)] opacity-65">
-              <div className="relative flex h-[260px] items-center justify-center bg-[color:var(--ink3)]">
-                <div className="absolute right-4 top-4 bg-[rgba(11,93,59,0.9)] px-3 py-[5px] text-[0.48rem] font-bold uppercase tracking-[0.3em] text-white">
+            <div className="coming overflow-hidden bg-[color:var(--surface)] opacity-85">
+              <div className="relative flex h-[260px] items-center justify-center bg-[color:var(--surface-soft)]">
+                <div className="absolute right-4 top-4 bg-[color:var(--g)]/95 px-3 py-[5px] text-[0.48rem] font-bold uppercase tracking-[0.3em] text-white">
                   Coming Soon
                 </div>
                 <div className="relative h-[110px] w-[110px] animate-[spin_12s_linear_infinite] rounded-full border-[3px] border-[color:var(--g)] border-dashed">
@@ -228,7 +268,7 @@ export default function Home() {
                   {[0, 90].map((deg) => (
                     <div
                       key={deg}
-                      className="absolute left-1/2 top-1/2 h-px w-1/2 origin-left bg-[rgba(11,93,59,0.4)]"
+                      className="absolute left-1/2 top-1/2 h-px w-1/2 origin-left bg-[color:var(--g)]/40"
                       style={{ transform: `rotate(${deg}deg)` }}
                     />
                   ))}
@@ -243,7 +283,7 @@ export default function Home() {
                   Not ready to own? Rent by the day or week. Full EjaGo
                   experience — no long-term commitment required.
                 </div>
-                <div className="inline-flex items-center gap-[7px] border border-[rgba(11,93,59,0.35)] px-3 py-[6px] text-[0.52rem] font-bold uppercase tracking-[0.28em] text-[color:var(--g)]">
+                <div className="inline-flex items-center gap-[7px] border border-[color:var(--line-soft)] px-3 py-[6px] text-[0.52rem] font-bold uppercase tracking-[0.28em] text-[color:var(--g)]">
                   <div className="h-[5px] w-[5px] rounded-full bg-[color:var(--g)]" />
                   Coming Soon
                 </div>
@@ -364,7 +404,7 @@ export default function Home() {
           ].map((c) => (
             <div
               key={c.title}
-              className="relative overflow-hidden border border-transparent bg-[color:var(--ink2)] px-9 py-10 transition-colors hover:border-[rgba(11,93,59,0.3)] hover:bg-[color:var(--ink3)]"
+              className="relative overflow-hidden border border-transparent bg-[color:var(--surface)] px-9 py-10 transition-colors hover:border-[color:var(--line-soft)] hover:bg-[color:var(--surface-soft)]"
             >
               <div className="absolute left-0 top-0 h-full w-[3px] origin-top scale-y-0 bg-[color:var(--g)] transition-transform duration-300 hover:scale-y-100" />
               <div className="mb-5 text-[2rem]">{c.icon}</div>
@@ -374,7 +414,7 @@ export default function Home() {
               <div className="text-[0.7rem] font-light leading-[2] tracking-[0.04em] text-[color:var(--muted)]">
                 {c.desc}
               </div>
-              <div className="mt-5 inline-flex items-center gap-[7px] border border-[rgba(11,93,59,0.35)] px-3 py-[6px] text-[0.52rem] font-bold uppercase tracking-[0.28em] text-[color:var(--g)]">
+              <div className="mt-5 inline-flex items-center gap-[7px] border border-[color:var(--line-soft)] px-3 py-[6px] text-[0.52rem] font-bold uppercase tracking-[0.28em] text-[color:var(--g)]">
                 {c.tag}
               </div>
             </div>
@@ -386,7 +426,7 @@ export default function Home() {
 
       {/* BATCH / BUSINESS */}
       <section className="mx-auto max-w-[1160px] px-[52px] pb-[110px] max-md:px-[18px]">
-        <div className="grid overflow-hidden border border-[color:var(--line)] bg-[color:var(--ink2)] grid-cols-2 max-md:grid-cols-1">
+        <div className="grid overflow-hidden border border-[color:var(--line)] bg-[color:var(--surface)] grid-cols-2 max-md:grid-cols-1">
           <div className="border-r border-[color:var(--line)] px-12 py-[52px] max-md:border-r-0 max-md:border-b">
             <div className="mb-4 text-[0.56rem] font-bold uppercase tracking-[0.5em] text-[color:var(--g)]">
               For Teams & Businesses
@@ -423,7 +463,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="flex flex-col justify-center gap-6 bg-[rgba(11,93,59,0.04)] px-12 py-[52px]">
+          <div className="flex flex-col justify-center gap-6 bg-[color:var(--surface-soft)] px-12 py-[52px]">
             {[
               { n: "5+", l: "Minimum batch order" },
               { n: "~2wks", l: "Delivery turnaround" },

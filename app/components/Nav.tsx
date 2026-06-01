@@ -35,11 +35,11 @@ export default function Nav() {
 
   return (
     <nav className={`nav ${stuck ? "stuck" : ""}`} id="nav">
-      <Link href="#" className="nav-logo">
+      <Link href="#" className="nav-logo anim-reveal delay-100">
         <Image src="/logo.png" alt="EjaGo" width={160} height={36} priority />
       </Link>
 
-      <div className="nav-right">
+      <div className="nav-right anim-fade delay-200">
         <a href="#about" className="nav-link">
           About
         </a>

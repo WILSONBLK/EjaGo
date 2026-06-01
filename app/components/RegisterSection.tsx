@@ -40,15 +40,15 @@ export default function RegisterSection() {
         <div className="grid grid-cols-[1fr_1fr] gap-[80px] items-start max-md:grid-cols-1">
           {/* LEFT ASIDE */}
           <aside className="sticky top-[100px] max-md:static">
-            <div className="sec-label text-[0.56rem] font-bold tracking-[0.55em] uppercase text-[color:var(--g)] mb-4">
-              Get Early Access
-            </div>
+              <div className="sec-label text-[0.56rem] font-bold tracking-[0.55em] uppercase text-[color:var(--g)] mb-4 anim-reveal delay-200">
+                Get Early Access
+              </div>
 
-            <h2 className="font-serif text-[clamp(1.8rem,3.5vw,3rem)] font-bold leading-[1.05] mb-4">
-              <em className="italic text-[color:var(--g)]">Be first.</em>
-              <br />
-              Not second.
-            </h2>
+              <h2 className="font-serif text-[clamp(1.8rem,3.5vw,3rem)] font-bold leading-[1.05] mb-4">
+                <em className="hero-em anim-swipe-left delay-300">Be first.</em>
+                <br />
+                <span className="anim-fade delay-400">Not second.</span>
+              </h2>
 
             <p className="text-[0.72rem] font-light text-[color:var(--muted)] tracking-[0.05em] leading-[2] mb-7">
               Register your interest. No payment required. EjaGo will reach you
